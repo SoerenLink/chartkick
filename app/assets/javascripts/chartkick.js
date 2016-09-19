@@ -1343,7 +1343,7 @@
   }
 
   function processGeoData(chart) {
-    var perfectData = toArr(data), i;
+    var perfectData = toArr(chart.data), i;
     for (i = 0; i < perfectData.length; i++) {
       perfectData[i] = [toFloat(perfectData[i][0]), toFloat(perfectData[i][1]), toFloat(perfectData[i][2])];
     }
