@@ -742,7 +742,8 @@
             var options = merge(merge(defaultOptions, chartOptions), chart.options.library || {});
 
             var data = new google.visualization.DataTable();
-            data.addColumn("string", "");
+            data.addColumn("number", "Latitude");
+            data.addColumn("number", "Longitude");
             data.addColumn("number", chart.options.label || "Value");
             data.addRows(chart.data);
 
