@@ -1343,7 +1343,11 @@
   }
 
   function processGeoData(chart) {
-    chart.data = processSimple(chart.data);
+    var perfectData = toArr(data), i;
+    for (i = 0; i < perfectData.length; i++) {
+      perfectData[i] = [toFloat(perfectData[i][0]), toFloat(perfectData[i][1]), toFloat(perfectData[i][2])];
+    }
+    chart.data = perfectData
     renderChart("GeoChart", chart);
   }
 
