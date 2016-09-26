@@ -742,10 +742,10 @@
             var options = merge(merge(defaultOptions, chartOptions), chart.options.library || {});
 
             var data = new google.visualization.DataTable();
-            data.addColumn("number", "Latitude");
-            data.addColumn("number", "Longitude");
-            data.addColumn("number", chart.options.label || "Value");
-            data.addColumn({type: 'string', role: 'tooltip'});
+            data.addColumn("number", "latitude");
+            data.addColumn("number", "longitude");
+            data.addColumn("number", "Population");
+            data.addColumn({'type': 'string', 'role': 'tooltip', 'p': {'html': true}});
             data.addRows(chart.data);
 
             chart.chart = new google.visualization.GeoChart(chart.element);
