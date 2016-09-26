@@ -1350,7 +1350,7 @@
         toFloat(perfectData[i][0]), 
         toFloat(perfectData[i][1]), 
         toFloat(perfectData[i][2]),
-        toFloat(perfectData[i][3])
+        perfectData[i][3]
       ];
     }
     chart.data = perfectData
