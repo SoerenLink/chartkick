@@ -746,7 +746,6 @@
             data.addColumn("number", "Longitude");
             data.addColumn("number", chart.options.label || "Value");
             data.addColumn({type: 'string', role: 'tooltip'});
-            data.addColumn({type: 'string', role: 'tooltip'});
             data.addRows(chart.data);
 
             chart.chart = new google.visualization.GeoChart(chart.element);
@@ -1351,8 +1350,7 @@
         toFloat(perfectData[i][0]), 
         toFloat(perfectData[i][1]), 
         toFloat(perfectData[i][2]),
-        toFloat(perfectData[i][3]),
-        toFloat(perfectData[i][4])
+        toFloat(perfectData[i][3])
       ];
     }
     chart.data = perfectData
