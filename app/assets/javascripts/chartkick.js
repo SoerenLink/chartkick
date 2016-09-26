@@ -745,6 +745,8 @@
             data.addColumn("number", "Latitude");
             data.addColumn("number", "Longitude");
             data.addColumn("number", chart.options.label || "Value");
+            data.addColumn({type: 'string', role: 'tooltip'});
+            data.addColumn({type: 'string', role: 'tooltip'});
             data.addRows(chart.data);
 
             chart.chart = new google.visualization.GeoChart(chart.element);
@@ -1345,7 +1347,13 @@
   function processGeoData(chart) {
     var perfectData = toArr(chart.data), i;
     for (i = 0; i < perfectData.length; i++) {
-      perfectData[i] = [toFloat(perfectData[i][0]), toFloat(perfectData[i][1]), toFloat(perfectData[i][2])];
+      perfectData[i] = [
+        toFloat(perfectData[i][0]), 
+        toFloat(perfectData[i][1]), 
+        toFloat(perfectData[i][2]),
+        toFloat(perfectData[i][3]),
+        toFloat(perfectData[i][4])
+      ];
     }
     chart.data = perfectData
     renderChart("GeoChart", chart);
